@@ -1,0 +1,37 @@
+.hide {
+    display: none;
+}
+.btn {
+    font-size: 16px;
+}
+.button-holder {
+    width: 30%;
+}
+#cart {
+    position: relative;
+    padding-right: 8px;
+}
+#cart .count {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    font-size: 12px;
+    color: red;
+}
+.info-error{
+    font-size: 20px;
+    color: red;
+    font-family: "Droid Sans";
+}
+.info-success{
+    font-size: 20px;
+    color: green;
+    font-family: "Droid Sans";
+}
+
+table td {
+    vertical-align: top;
+}
+table input[type="text"] {
+    width: auto;
+}
