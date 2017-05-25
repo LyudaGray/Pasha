@@ -15,11 +15,26 @@
     font-family:'Droid Sans';
     src: url(../fonts/DroidSans.ttf);
 }
+html,
 body {
+	height: 100%;
+}
+body {
+	position: relative;
 	background: #000 ;
 	color: #555;
 	margin: 0;
-	
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+	height: 100%;
 }
 h1  {
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -525,8 +540,7 @@ table {
 	margin: 0 auto;
 	border-collapse: collapse;
 	margin-bottom: 4%;
-	
-
+	background: #222;
 }
 tr { 
 	background: #222; 
@@ -743,17 +757,28 @@ label {
 }
 /*--- End Extended Contact Form Styles ---*/
 /*---- Start Footer --*/
-footer {
+
+.wrapper {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 0 auto;
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto;
+}
+.footer {
 	background: #333333;
 	width: 100%;
 	overflow: hidden;
 	opacity: 0.90;
+	-webkit-box-flex: 0;
+	-webkit-flex:  0 0 auto;
+	-ms-flex:  0 0 auto;
+	flex:  0 0 auto;
 }
 #footer-inner {
 	max-width: 1200px;
 	margin: 0 auto;
 }
-footer .one-third {
+.footer .one-third {
 	width: 33%;
 	margin: 2% 0;
 }
@@ -773,11 +798,11 @@ footer .one-third p {
 .footercontact {
 	text-align: center;
 }
-footer a {
+.footer a {
 	color: #959595;
 	text-decoration: none;
 }
-footer a:hover {
+.footer a:hover {
 	color: #5567A5;
 	text-decoration: none;
 }
@@ -819,7 +844,7 @@ ul.social {
 .social i:hover {
 	background-color: #959595;
 }
-footer.second {
+.footer.second {
 	border-top: 1px solid #4D4E50;
 	background-color: #333333;
 	max-height: 50px;
@@ -1027,7 +1052,7 @@ footer.second {
 	.subbutton h5 {
 		color: #FFFFFF;
 	}
-	footer .one-third {
+	.footer .one-third {
 		width: 100%;
 		margin: 0;
 	}
