@@ -12,7 +12,7 @@
 @endsection
 
 @section('categories')
-
+@if(count($products) > 0)
     @foreach($products as $product)
 
         <div class="clearfix"></div>
@@ -52,7 +52,11 @@
         </div>
 
     @endforeach
+@else
 
+    <div>В данной категории нет товаров</div>
+
+@endif
 
 @endsection
 

@@ -40,13 +40,16 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::group(['prefix'=>'admin'], function(){
+
     Route::get('/','AdminController@index');
     Route::get('/login',['as' => 'admin.login','uses' => 'AuthAdmin\LoginController@showLoginForm']);
     Route::post('/login',['uses' => 'AuthAdmin\LoginController@login']);
     Route::get('/logout',['as' => 'admin.logout','uses' => 'AuthAdmin\LoginController@logout']);
     Route::match(['get', 'post'], '/add-category', ['as'=>'admin-add-cat', 'uses' => 'AdminController@add_category']);
     Route::match(['get', 'post'], '/add-product', ['as'=>'admin-add-product', 'uses' => 'AdminController@add_product']);
+    Route::match(['get', 'post'], '/show-products', ['as'=>'admin-show-products', 'uses' => 'AdminController@show_products']);
+    Route::match(['get', 'post'], '/change_products_status/{prod_id}', ['as'=>'change-products-status', 'uses' => 'AdminController@change_products_status']);
+    Route::match(['get', 'post'], '/change_product_price/{prod_id}/{new_price}', ['as'=>'change-products-price', 'uses' => 'AdminController@change_product_price']);
     Route::get('/orders/{status}',['as' => 'orders','uses' => 'AdminController@show_orders']);
-
 
 });

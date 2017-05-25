@@ -111,4 +111,50 @@ class AdminController extends MainController
 
     }
 
+
+    public function show_products(Request $request){
+
+        $products = Product::all();
+
+
+
+
+        return view('admin.admin_show_products', ['products'=>$products]);
+
+    }
+
+
+
+    public function change_product_price($prod_id, $new_price){
+
+        $product = Product::where('id', $prod_id)->first();
+
+        if ($product){
+            $product['price'] = $new_price;
+            $product->save();
+            $data = ['success'=>'1', 'product_name' => $product['product_name']];
+        }else{
+            $data = ['success'=>'0', 'product_name' => $product['product_name']];}
+
+        echo json_encode($data);
+
+    }
+
+
+    public function change_products_status($prod_id){
+
+        $product = Product::where('id', $prod_id)->first();
+
+        if ($product['status']==1){
+            $product['status'] = 0;
+            $product->save();
+        }else{
+            $product['status'] = 1;
+            $product->save();
+        }
+        $data = ['success'=>'1', 'product_name' => $product['product_name']];
+        echo json_encode($data);
+
+    }
+
 }

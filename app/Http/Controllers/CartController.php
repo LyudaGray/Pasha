@@ -47,8 +47,6 @@ class CartController extends MainController
 
         $prod_in_cart = [];
 
-
-
         if (session('cart')) {
             foreach (session('cart') as $product) {
                 array_push($prod_in_cart, Product::where('id', $product[0]['prod_id'])->first());
@@ -56,7 +54,6 @@ class CartController extends MainController
         }
 
         return view('cart', ['menus'=>$this->menu, 'cart'=>$prod_in_cart, 'summa'=>$this->summa]);
-
     }
 
     public function saveorder(Request $request){
@@ -110,7 +107,15 @@ class CartController extends MainController
 
         });
 
+        //отправить сообщение Администатору
 
+        Mail::send('mail_to_admin', ['data'=>$clientsData, 'order'=>$order->id], function($message) use ($clientsData){
+
+            $mail_admin = env('MAIL_ADMIN');
+            $message->to($mail_admin, $clientsData['name']);
+            $message->from($mail_admin, 'Mr_Coffee')->subject('Zakaz_Coffee');
+
+        });
 
         Session::flush();
 
