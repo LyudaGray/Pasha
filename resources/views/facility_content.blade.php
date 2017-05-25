@@ -9,7 +9,7 @@
     <h3 class="text-welcome">Доставка курьером по Одессе</h3>
     <!--</section> <!--- End Animation -->
     </div>
-    <div id="inner-wrapper">
+    <div class="inner-wrapper">
         <p class="full-para">Доставка курьером по городу Одесса осуществляется <span> бесплатно</span>.Доставка осуществляется ежедневно. Доставка осуществляется, как правило, в течение 1-2 дней после оформления заказа. Если сроки поставки определенной продукции будут больше, то мы Вас об этом уведомим заранее.</p>
 
 
@@ -31,7 +31,7 @@
 </section>
 </div>
 <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-    <div id="inner-wrapper">
+    <div class="inner-wrapper">
         <h1 class="head-welcome">Способы оплаты</h1>
         <div class="line-rule"></div>
         <h3 class="text-welcome">Оплата наличными</h3>

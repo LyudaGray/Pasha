@@ -9,20 +9,23 @@
     <link rel="stylesheet" type="text/css" href={{asset("css/style.css")}}/>
     <link rel="stylesheet" type="text/css" href={{asset("css/template.css")}}/>
 
-    <link href={{asset("css/font-awesome.min.css")}} rel="stylesheet"/>
     <link rel="stylesheet" href={{asset("css/font-awesome.min.css")}}>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href={{asset("css/animate.css")}}/>
+    <link rel="stylesheet" type="text/css" href={{asset("css/waypoints.css")}}/>
 
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" type="image/png" href={{asset('img/zn.png')}}/>
 
     <meta name="description" content="">
-    <script src={{asset('js/jquery-1.11.2.min.js')}}></script>
-    <script src={{asset('js/main.js')}}></script>
+    <script src="{{asset('js/modernizr.js')}}"></script>
 
 
 </head>
 <body>
+<!--- start wrapper -->
+<div class="wrapper">
 <header>
     <div id="header-inner">
         <a href="/" id="logo" title=""></a>
@@ -70,9 +73,9 @@
 
 
 <div class="clearfix"></div>
-
+</div><!--- end wrapper -->
 <!--- Start Footer -->
-<footer>
+<footer class="footer">
     <div id="footer-inner">
         <section class="one-third" id="footer-third">
             <h3>Контакты</h3>
@@ -98,15 +101,22 @@
             <h5><a href="{{route('main_page')}}">Главная</a> - <a href="{{route('about_page')}}">о нас</a> - <a href="{{route('facility')}}">оплата и доставка</a> - <a href="{{route('contacts')}}">контакты</a></h5>
         </section>
     </div>
+    <div class="footer second">
+        <p>&copy; Coffee-Shop, 2017.</p>
+    </div>
 </footer>
-<footer class="second">
-    <p>&copy; Coffee-Shop, 2017.</p>
-</footer>
+
 <!--- End Footer -->
 <!--- Top Scroll Start -->
 <a href="#0" class="cd-top">наверх</a>
+<script src={{asset('js/jquery-1.11.2.min.js')}}></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src={{asset('js/jquery.waypoints.min.js')}}></script>
+<script src={{asset('js/jquery.bxslider.min.js')}}></script><!--For Image Slider-->
+<script src={{asset('js/waypoints.js')}}></script>
+<script src={{asset('js/main.js')}}></script>
 <script src="{{asset('js/top.js')}}"></script> <!-- Gem jQuery -->
-<script src="{{asset('js/modernizr.js')}}"></script>
+
 <!--- Top Scroll End -->
 </body>
 </html>

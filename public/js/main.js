@@ -95,7 +95,35 @@ $(function() {
         }).done(function (response) {
             captcha.prop('src', response);
         });
-
+    
     });
+    if($('.slider1').length) {
+			$('.slider1').bxSlider({
+				mode: 'fade',
+				captions: false,
+				auto:true,
+				pager:false,
+		
+			});
+    }
+	  if($('.slider2').length) {
+        $('.slider2').bxSlider({
+          pager:false,
+          captions: true,
+          maxSlides: 3,
+          minSlides: 1,
+          slideWidth: 230,
+          slideMargin: 10
+        });
+    }
+    if($('.slider3').length) {
+        $('.slider3').bxSlider({
+          mode: 'fade',
+          captions: false,
+          auto:true,
+          pager:false,
+          controls:false,
+        });
+    }
 
 });

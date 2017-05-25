@@ -16,7 +16,7 @@
     @foreach($products as $product)
 
         <div class="clearfix"></div>
-        <div id="inner-wrapper">
+        <div class="inner-wrapper">
 
             <article>
                 <!--- Start Animation -->
@@ -36,7 +36,7 @@
                               <div class="line-rule"></div>
                         <br>
                     <p>{{$product['short_description']}}</p>
-
+                    <h2>Цена: {{$product['price']}} грн </h2>
                 </section>
                 </section> <!--- End Animation -->
                 <div class="button-holder {{(isset(session('cart')['product_'.$product['id']])) ? 'hide' : ''}}">

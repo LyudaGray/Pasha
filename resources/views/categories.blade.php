@@ -22,3 +22,4 @@
              @endforeach
         </table>
     </section> <!--- End Animation -->
+</div>

@@ -1,5 +1,5 @@
 <div class="clearfix"></div>
-<div id="inner-wrapper">
+<div class="inner-wrapper">
     <!--- Start Animation -->
     <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
         <h3 class="text-welcome">Оставьте свой отзыв</h3>

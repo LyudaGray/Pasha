@@ -1,5 +1,5 @@
 <div class="clearfix"></div>
-<div id="inner-wrapper">
+<div class="inner-wrapper">
     <!--- Start Animation -->
     <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
         <p class="full-para">Наш основной профиль-это производство высококачкственных продуктов из меди для приготовления кофе. Наше производство находится непосредственно в Турции, где изделия создаются опытными мастерами.</p>
