@@ -7,18 +7,21 @@
         <thead>
         <th>№</th>
         <th>Наименование</th>
+        <th>Категория</th>
         <th>цена за единицу</th>
         <th>наличие на складе</th>
-        <th>изменить данные</th>
+        <th>изменить цену</th>
 
         </thead>
         <tbody>
         @foreach($products as $k => $product)
 
-            <tr>
+            <tr id="row_{{$product['id']}}">
                 <td>{{$k+1}}</td>
 
                 <td>{{$product['product_name']}}</td>
+
+                <td>{{$product->category['title']}}</td>
 
                 <td><input id="newPrice_{{$product['id']}}" type="text" value="{{$product['price']}}"></td>
 

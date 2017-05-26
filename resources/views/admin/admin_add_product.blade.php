@@ -13,7 +13,7 @@
         <input type="text" name="new_product" required><br><br>
         <label>Введите цену нового товара:</label>
         <input type="text" name="price" required><br><br>
-        <label>Выбрать картинку для нового товара: </label>
+        <label>Выбрать картинку для нового товара (*.png): </label>
         <input type="file" name="image"><br><br>
 
         <textarea textarea rows="10" cols="45" name="description">

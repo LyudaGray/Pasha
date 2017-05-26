@@ -157,4 +157,26 @@ class AdminController extends MainController
 
     }
 
+    public function change_order_status($prod_id){
+
+        $order = Order::where('id', $prod_id)->first();
+
+        if ($order['status']==0){
+            $order['status'] = 1;
+            $order->save();
+            $data = ['success'=>'1', 'order_id' => $order['id']];
+        }else{
+            $order['status'] = 1;
+            $order->save();
+            $data = ['success'=>'0'];
+        }
+
+
+        echo json_encode($data);
+
+
+    }
+
+
+
 }

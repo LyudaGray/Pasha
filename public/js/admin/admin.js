@@ -2,6 +2,23 @@
  * Created by User on 24.05.2017.
  */
 
+function changeOrderStatus(order_id){
+    $.ajax({
+        type : 'POST',
+        async:false,
+        url: "/admin/change_order_status/"+order_id+"/",
+        dataType: 'json',
+
+        success: function (data) {
+            if (data['success']){
+                alert("Статус заказа № "+data['order_id']+" изменен!");
+                $('#row_'+order_id).remove();
+            }else {
+                alert("Что-то не то!");
+            }
+        }
+    });
+}
 
 function changeStatus(prod_id){
     $.ajax({

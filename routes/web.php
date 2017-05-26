@@ -50,6 +50,8 @@ Route::group(['prefix'=>'admin'], function(){
     Route::match(['get', 'post'], '/show-products', ['as'=>'admin-show-products', 'uses' => 'AdminController@show_products']);
     Route::match(['get', 'post'], '/change_products_status/{prod_id}', ['as'=>'change-products-status', 'uses' => 'AdminController@change_products_status']);
     Route::match(['get', 'post'], '/change_product_price/{prod_id}/{new_price}', ['as'=>'change-products-price', 'uses' => 'AdminController@change_product_price']);
+    Route::match(['get', 'post'], '/change_order_status/{prod_id}', ['as'=>'change-order-status', 'uses' => 'AdminController@change_order_status']);
+
     Route::get('/orders/{status}',['as' => 'orders','uses' => 'AdminController@show_orders']);
 
 });
