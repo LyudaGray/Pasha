@@ -183,3 +183,10 @@ body {
 .modal-bg_lock {
 	overflow: hidden;
 }
+table {
+	margin-bottom: 10px;
+}
+table td, table th {
+	border: 1px solid grey;
+
+}

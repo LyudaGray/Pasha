@@ -28,7 +28,7 @@
                 <td><input id="checkBox" type="checkbox" onchange="changeStatus({{($product['id'])}});" {{($product['status']) ? 'checked' : ''}} ></td>
 
                 <td><button type="button" onclick="changePrice('{{($product['id'])}}');">Изменить цену</button></td>
-
+            </tr>
         @endforeach
 
         </tbody>
