@@ -23,3 +23,16 @@
         </table>
     </section> <!--- End Animation -->
 </div>
+<div class="clearfix"></div>
+<div id="inner-wrapper">
+    <main>
+        <ul class="navlist">
+
+            @foreach($categories as $key => $category)
+                <li class="dropdown-toggle"><a href="/category/{{$category['id']}}">{{$category['title']}}</a></li>
+            @endforeach
+
+        </ul>
+
+    </main>
+</div>
