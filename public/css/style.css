@@ -27,6 +27,7 @@ body {
 	background: #000;
 	color: #555;
 	margin: 0;
+	min-width: 300px;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -485,55 +486,101 @@ main > .navlist > li {
 }
 
 /*PRODUCTS BEGIN*/
-/*.container-products {*/
-	/*display: flex;*/
-	/*justify-content: space-around;*/
-	/*flex-wrap: wrap;*/
-	/*flex-direction: row;*/
-	/*align-items: center;*/
-	/*width: 100%;*/
-	/*margin: auto;*/
-	/*flex-grow: 1;*/
-	/*box-sizing: border-box;*/
-	/*flex: 1 0 auto;*/
-/*}*/
 
-/*figure {*/
-	/*border-radius: 50%;*/
-/*}*/
 .products {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	flex-direction: row;
-	align-items: center;
+	display: block;
+	list-style: none;
+	padding: 0;
 	width: 100%;
-	margin: auto;
-	/*flex-grow: 1;*/
+	font-size: 0;
 	box-sizing: border-box;
-	/*flex: 1 0 auto;*/
-}
-
-.products li {
-	display: inline-block;
 	text-align: center;
-	/*margin: 10px 10px;*/
-	vertical-align: bottom;
-	color: white;
+}
+.products * {
+	box-sizing: border-box;
+}
+
+.products .item {
+	width: 100%;
+	display: inline-block;
+	margin: 0 0 20px 0;
+	vertical-align: top;
+}
+
+@media (min-width: 480px) {
+	.products {
+		margin: 0 -20px 0 0;
+	}
+	.products .item {
+		width: calc(50% - 50px);
+		margin: 0 20px 20px 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.products {
+		text-align: left;
+	}
+	.products .item {
+		width: calc(33.33333333% - 20px);
+	}
+}
+
+@media (min-width: 992px) {
+	.products .item {
+		width: calc(25% - 20px);
+	}
+}
+
+@media (min-width: 1180px) {
+	.products .item {
+		width: calc(20% - 20px);
+	}
+}
+.product {
+	display: block;
+	position: relative;
+	max-width: 205px;
+	height: 350px;
+	margin: auto;
 	border: 2px dotted transparent;
-}
-
-.products li a:hover {
+	text-align: center;
 	text-decoration: none;
-}
-
-.products figcaption:hover {
+	font-size: initial;
 	color: white;
+	transition: color .25s ease-out;
+}
+.product:hover {
+	text-decoration: none;
+	border-color: grey;
+}
+.product:hover .title {
+	color: #fff;
+}
+.product .caption {
+	display: table;
+	width: 100%;
+	padding: 10px 0;
+	height: 80px;
+	overflow: hidden;
+}
+.product .title {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 120%;
+	line-height: 150%;
+	transition: color .25s ease-out;
+}
+.product .image-wrapper {
+	position: relative;
+	overflow: hidden;
+}
+.product .image-wrapper  img {
+	max-width: 100%;
+	height: auto;
+	margin: auto;
 }
 
-.products li:hover {
-	border: 2px dotted grey;
-}
 
 /*PRODUCTS END*/
 .one-third i {
@@ -605,10 +652,10 @@ ul.gym li i {
 /*--- Start Pricing Table CSS --*/
 table {
 	width: 100%;
-	margin: 0 auto;
+	margin: 0 auto 4%;
 	border-collapse: collapse;
-	margin-bottom: 4%;
 	background: #222;
+	font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 tr {
@@ -631,6 +678,12 @@ td h5 {
 td {
 	padding: 6px;
 	border: none;
+}
+thead th {
+	padding: 8px;
+}
+tfoot td {
+	padding: 15px 8px;
 }
 
 /*--- End Pricing Table CSS --*/
@@ -718,17 +771,17 @@ td {
 	height: 200px;
 }
 
-input[type="text"], input[type="password"], input[type="email"], textarea, select {
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="tel"], textarea, select {
 	background: none repeat scroll 0 0 #fff;
 	border: 1px solid #EFA831;
 	box-shadow: 0 1px 1px 0 rgba(180, 180, 180, 0.1);
 	color: #888;
 	display: block;
 	font-size: 16px;
-	margin: 0;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	margin: 0 0 10px;
 	outline: medium none;
 	padding: 10px 11px;
-	margin-bottom: 20px;
 	width: 100%;
 }
 
@@ -772,8 +825,9 @@ input[type="text"], input[type="password"], input[type="email"], textarea, selec
 #contact-area {
 	width: 95%;
 	margin-top: 1%;
+	padding-left: 1%;
 	font-size: 14px;
-	font-color: #5E412F;
+	color: #5E412F;
 }
 
 #contact-area input, #contact-area textarea {
@@ -825,12 +879,14 @@ label {
 	width: 100px;
 	padding: 2%;
 	font-size: 1.4em;
+	font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 /*--- End Contact Form Style --*/
 /*--- Extended Contact Form Styles ---*/
 #contact-us input[type="text"], #contact-us input[type="password"], #contact-us input[type="email"], #contact-us textarea, #contact-us select {
 	float: none;
+	margin: 0;
 }
 
 #contact-us {
@@ -1149,10 +1205,6 @@ ul.social {
 		height: 100px;
 	}
 
-	/*.container-products {*/
-		/*text-align: center;*/
-	/*}*/
-
 	.one-third i {
 		text-align: center;
 		color: #F0F0F0;
@@ -1237,7 +1289,7 @@ ul.social {
 		margin-bottom: 15%;
 	}
 
-	table {
+	.category-table {
 		display: none;
 	}
 }
@@ -1264,7 +1316,7 @@ ul.social {
 		margin: 2%;
 	}
 
-	table {
+	.category-table {
 		display: none;
 	}
 
@@ -1290,7 +1342,100 @@ ul.social {
 		font-size: 125%;
 	}
 
-	/*.container-products {*/
-		/*text-align: center;*/
-	/*}*/
+
+}
+/*form styles*/
+/*delete arrow input type number*/
+form * {
+	box-sizing: border-box;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
+	box-sizing: border-box;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+button,
+input[type="submit"] {
+	cursor: pointer;
+}
+
+/*responsive cart table styles*/
+.responsive-table {
+	margin-top: 40px;
+}
+.responsive-table input[type="number"] {
+	width: 50px;
+}
+.responsive-table .coast, .responsive-table .amount  {
+	text-align: center;
+}
+.responsive-table .coast input[type="text"], .responsive-table .amount input[type="number"]{
+	float: none;
+	display: inline-block;
+}
+.responsive-table .del {
+	text-align: right;
+}
+.responsive-table .del .btn {
+	display: inline-block;
+	float: none;
+}
+.responsive-table .hidden {
+	width: 0;
+	height: 0;
+	font-size: 0;
+	border: 0;
+}
+/* Stack rows vertically on small screens */
+@media (max-width: 767px) {
+	/* Hide column labels */
+	.responsive-table thead tr {
+		display: none;
+	}
+	.responsive-table tr {
+		/*border-bottom: 0.125em solid #DCDCDC;*/
+		border-bottom: 0;
+	}
+	/* Leave a space between table rows */
+	.responsive-table tr + tr {
+		margin-top: 1.5em;
+	}
+	/* Get table cells to act like rows */
+	.responsive-table tr,
+	.responsive-table td {
+		display: block;
+		text-align: left !important;
+	}
+	.responsive-table td {
+		border: none;
+		border-bottom: 1px solid #DCDCDC;
+		/* Leave a space for data labels */
+		padding-left: 50%;
+	}
+	/* Add data labels */
+	.responsive-table td:before {
+		content: attr(data-label);
+		display: inline-block;
+		font-weight: normal;
+		line-height: 1.5;
+		margin-left: -100%;
+		width: 100%;
+	}
+	.responsive-table td input {
+		width: 50% !important;
+	}
+	.responsive-table tfoot td {
+		padding-left: 8px;
+	}
+}
+
+/*states classes*/
+.padding-top {
+	padding-top: 40px;
 }

@@ -19,28 +19,28 @@
                     <div id="contact-form">
 
 
-                        <form id="contact-us" action="{{route('contactUs')}}" method="post">
+                        <form id="contact-us" action="{{route('contactUs')}}" method="post" class="form">
                             <div class="formblock">
-                                <label class="screen-reader-text">ФИО</label>
+                                <label for="userName" class="screen-reader-text">ФИО</label>
 
-                                <input type="text" name="name" id="contactName" value="" class="txt requiredField" placeholder="ФИО:" />
+                                <input id="userName" type="text" name="name" id="contactName" value="" class="txt requiredField" placeholder="ФИО:" />
 
                             </div>
                             <div class="clearfix"></div>
                             <div class="formblock">
-                                <label class="screen-reader-text">Email</label>
+                                <label for="userEmail" class="screen-reader-text">Email</label>
 
                                 <br />
 
-                                <input type="text" name="email" id="email" value="" class="txt requiredField email" placeholder="Email:" />
+                                <input id="userEmail" type="text" name="email" id="email" value="" class="txt requiredField email" placeholder="Email:" />
 
                             </div>
 
                             <div class="clearfix"></div>
                             <div class="formblock">
-                                <label class="screen-reader-text">Сообщение</label>
+                                <label for="userMessage" class="screen-reader-text">Сообщение</label>
 
-                                <textarea name="comment" id="commentsText" class="txtarea requiredField" placeholder="Сообщение:"></textarea>
+                                <textarea id="userMessage" name="comment" id="commentsText" class="txtarea requiredField" placeholder="Сообщение:"></textarea>
 
                             </div>
                             <div class="clearfix"></div>

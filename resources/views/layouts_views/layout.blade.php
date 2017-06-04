@@ -38,12 +38,11 @@
                     @endforeach
 
                         <li class="basketball"><a id="cart" href="{{route('cart')}}" title=""><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-
                             <span class="count">
                                 {{(count(session()->get('cart')) == 0) ? "" : count(session()->get('cart'))}}
                             </span>
-
-                            </a></li>
+                            </a>
+                        </li>
                 </ul>
             @endif
         </nav>

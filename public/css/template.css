@@ -19,13 +19,14 @@
     color: red;
 }
 .info-error{
+    margin-bottom: 10px;
     font-size: 20px;
     color: red;
     font-family: "Droid Sans";
 }
 .info-success{
     font-size: 20px;
-    color: green;
+    color: #959595;
     font-family: "Droid Sans";
 }
 
@@ -34,4 +35,27 @@ table td {
 }
 table input[type="text"] {
     width: auto;
+}
+.order-form {
+    padding: 0 20px;
+}
+.formblock {
+    margin-bottom: 15px;
+}
+#orderForm {
+    margin-bottom: 40px;
+}
+#orderForm #press_order {
+    margin-left: 8px;
+}
+.captcha input {
+    margin-bottom: 25px;
+}
+.captcha-loader {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    margin-left: 10px;
+    font-weight: normal;
+    font-size: 14px;
 }

@@ -52,7 +52,9 @@
     @endforeach
 @else
 
-    <div>В данной категории нет товаров</div>
+    <div class="inner-wrapper">
+       <h3>В данной категории нет товаров </h3>
+    </div>
 
 @endif
 

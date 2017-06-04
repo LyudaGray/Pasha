@@ -9,7 +9,7 @@
 <!--- Start Animation -->
 <div class="inner-wrapper">
     <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-        <table>
+        <table class="category-table">
             @foreach($categories as $key => $category)
                 @if($key==0 || $key%3 ==0)
                     <tr>

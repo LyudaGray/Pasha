@@ -15,11 +15,12 @@
     <div class="container-products">
         <ul class="products first">
             @foreach($categories as $key => $category)
-                    <li>
-                        <a href="/category/{{$category['id']}}">
-                            <figure>
-                                 <img src="img/{{$category['img']}}.jpg"> <figcaption><h5>{{$category['title']}}<br><i>&nbsp;</i> </h5></figcaption>
-                            </figure>
+                    <li class="item">
+                        <a class="product" href="/category/{{$category['id']}}">
+                            <div class="image-wrapper">
+                                <img src="img/{{$category['img']}}.jpg">
+                            </div>
+                            <div class="caption"><h5 class="title">{{$category['title']}}</h5></div>
                         </a>
                     </li>
             @endforeach

@@ -10,105 +10,105 @@
     </div>
 
     @if(count($errors)>0)
-        @foreach($errors->all() as $error)
-            <div class="info-error">
-                {{$error}}
-            </div>
-        @endforeach
+        <div class="inner-wrapper padding-top">
+            @foreach($errors->all() as $error)
+                <div class="info-error">
+                    {{$error}}
+                </div>
+            @endforeach
+        </div>
     @endif
 
 @endsection
 
 @section('categories')
+    <div class="inner-wrapper">
+        <form id="orderForm" method="post" action="/cart/saveorder">
 
-    <form id="orderForm" method="post" action="/cart/saveorder">
+            <div>
+                @if(!count($cart)==0)
+                    <table id="cart_table" border="1" bgcolor="#f0f8ff" class="responsive-table">
+                        <thead>
+                        <th class="number">№</th>
+                        <th class="name">Наименование</th>
+                        <th class="amount">Количество</th>
+                        <th class="coast">Цена за единицу</th>
+                        <th class="del">Удалить из корзины</th>
+                        <th class="hidden"></th>
+                        </thead>
+                        <tbody>
+                        @foreach($cart as $k => $item)
+                            <tr id="row_{{$item['id']}}">
+                                <td class="number" data-label="№">{{$k+1}}</td>
+                                <td class="name" data-label="Наименование">{{$item['product_name']}}</td>
 
-        <div>
-            @if(!count($cart)==0)
-                <table id="cart_table" border="1" bgcolor="#f0f8ff">
-                    <thead>
-                    <th>№</th>
-                    <th>Наименование</th>
-                    <th>количество</th>
-                    <th>цена за единицу</th>
-                    <th>Удалить из корзины</th>
-                    <th></th>
-                    </thead>
-                    <tbody>
-                    @foreach($cart as $k => $item)
-                        <tr id="row_{{$item['id']}}">
-                            <td>{{$k+1}}</td>
-                            <td>{{$item['product_name']}}</td>
+                                <td class="amount" data-label="Количество"><input onchange="calculateSumm();" id="ProductId_{{$item['id']}}" min="1" size="3" type="number" value="1" name="countOfProductId_{{$item['id']}}"></td>
 
-                            <td><input onchange="calculateSumm();" id="ProductId_{{$item['id']}}" min="1" size="3" type="number" value="1" name="countOfProductId_{{$item['id']}}"></td>
+                                <td class="coast" data-label="Цена за единицу"><input id="priceOfProductId_{{$item['id']}}" type="text" value="{{$item['price']}}" name="priceOfProductId_{{$item['id']}}"></td>
 
-                            <td><input id="priceOfProductId_{{$item['id']}}" type="text" value="{{$item['price']}}" name="priceOfProductId_{{$item['id']}}"></td>
+                                <td class="del" data-label="Удалить из корзины"><button class="btn" type="button" onclick="removeFromCart({{$item['id']}})">Удалить</button> </td>
 
-                            <td><button class="btn" type="button" onclick="removeFromCart({{$item['id']}})">Удалить</button> </td>
+                                <td class="hidden"><input type="hidden" value="{{$item['id']}}" name="ProductId_{{$item['id']}}"></td>
 
-                            <td><input type="hidden" value="{{$item['id']}}" name="ProductId_{{$item['id']}}"></td>
-
+                            </tr>
+                            <div class="hide">{{$summa+=$item['price']}}</div>
+                        @endforeach
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="6" align="right">Общая стоимость продукции:<span id="summa_zakaza">{{$summa}},00грн</span></td>
                         </tr>
-                        <div class="hide">{{$summa+=$item['price']}}</div>
-                    @endforeach
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td colspan="6" align="right">Общая стоимость продукции:<span id="summa_zakaza">{{$summa}},00грн</span></td>
-                    </tr>
-                    </tfoot>
-                </table >
+                        </tfoot>
+                    </table >
 
-                <button id="press_order" class="btn" onclick="showOrderForm();" type="button">Сделать заказ</button><br><br><br>
+                    <button id="press_order" class="btn" onclick="showOrderForm();" type="button">Сделать заказ</button><br><br><br>
 
-            @else
-                <div class="info-success">
-                    <br>Корзина пустая...
-                </div>
+                @else
+                    <div class="info-success">
+                        <br>Корзина пустая...
+                    </div>
 
-            @endif
+                @endif
 
-        </div>
+            </div>
 
-        <div id="submit_order" class="{{(count($errors)>0) ? "" : 'hide'}}">
+            <div id="submit_order" class="{{(count($errors)>0) ? "" : 'hide'}} order-form">
 
-                <div>
-                    <label>ФИО:</label>
-                    <input type="text" name="name" value="{{old('name')}}"required>
-                </div>
+                    <div class="formblock">
+                        <label for="userName">ФИО:</label>
+                        <input id="userName" type="text" name="name" value="{{old('name')}}"required>
+                    </div>
 
-                <div>
-                    <label>Email address:</label>
-                    <input type="email" name="email" value="{{old('email')}}" required>
-                </div>
+                    <div class="formblock">
+                        <label for="userEmail">Email address:</label>
+                        <input id="userEmail" type="email" name="email" value="{{old('email')}}" required>
+                    </div>
 
-                <div>
-                    <label>Phone:</label>
-                    <input type="tel" name="phone" value="{{old('phone')}}" required>
-                </div>
+                    <div class="formblock">
+                        <label for="userPhone">Phone:</label>
+                        <input id="userPhone" type="tel" name="phone" value="{{old('phone')}}" required>
+                    </div>
 
 
 
-                {{--капча--}}
+                    {{--капча--}}
+                    <div class="formblock ">
+                        <label for="captchaInput">Капча</label>
+                        <div class="captcha">
+                            <input id="captchaInput" type="text" name="captcha" required>
+                            {{--<label for=""></label>--}}
+                            <img src="{{ captcha_src() }}" alt="captcha" class="captcha-img" data-refresh-config="default"><a href="#" id="refresh"><span class="captcha-loader">Обновить</span></a></p>
+                        </div>
+                    </div>
+                {{csrf_field()}}
 
-                <div class="">
-                    <label for=""></label>
-                    <img src="{{ captcha_src() }}" alt="captcha" class="captcha-img" data-refresh-config="default"><a href="#" id="refresh"><span class="glyphicon glyphicon-refresh">refresh</span></a></p>
-                </div>
-                <div class="">
-                    <label>Капча</label>
-                    <input class="form-control" type="text" name="captcha" required>
-                </div>
+                    <button type="submit" class="btn btn-default">Подтвердить </button><br><br><br>
 
-            {{csrf_field()}}
+            </div>
 
-                <button type="submit" class="btn btn-default">Подтвердить </button><br><br><br>
+        </form>
 
-        </div>
-
-    </form>
-
-
+    </div>
 @endsection
 
 @section('categories_grafica')
