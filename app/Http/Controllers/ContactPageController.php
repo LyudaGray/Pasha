@@ -36,7 +36,7 @@ class ContactPageController extends MainController
         Mail::send('email', ['data'=>$data], function($message) use ($data){
 
             $mail_admin = env('MAIL_ADMIN');
-            $message->from($data['email'], $data['name']);
+            $message->from($mail_admin, $data['name']);
             $message->to($mail_admin, 'Mr_Admin')->subject('question');
 
         });
@@ -44,9 +44,6 @@ class ContactPageController extends MainController
             Flash::success('Ваше сообщение успешно отправлено!');
 
             return redirect('/about');
-
-//            return redirect()->route('main_page')->with('status', 'Ваше сообщение отправлено');
-
 
     }
 }

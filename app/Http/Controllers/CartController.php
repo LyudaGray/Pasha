@@ -112,8 +112,8 @@ class CartController extends MainController
         Mail::send('mail_to_admin', ['data'=>$clientsData, 'order'=>$order->id], function($message) use ($clientsData){
 
             $mail_admin = env('MAIL_ADMIN');
-            $message->to($mail_admin, $clientsData['name']);
-            $message->from($mail_admin, 'Mr_Coffee')->subject('Zakaz_Coffee');
+            $message->to($mail_admin, 'Coffee-Man');
+            $message->from($mail_admin, 'Mr_Coffee')->subject('Zakaz_Coffee_'.$clientsData['name']);
 
         });
 
