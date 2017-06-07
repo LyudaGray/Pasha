@@ -11,7 +11,7 @@
         </ul>
 
     </section>
-    <img src="img/kofe.png" class="kofe">
+    <h1 class="kofe"><span>Coffee-shop - интернет магазин</span></h1>
 
     </section> <!--- End Animation -->
 </div>
