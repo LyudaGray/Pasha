@@ -93,7 +93,7 @@
 
                     {{--капча--}}
                     <div class="formblock ">
-                        <label for="captchaInput">Капча</label>
+                        <label for="captchaInput">Captcha</label>
                         <div class="captcha">
                             <input id="captchaInput" type="text" name="captcha" required>
                             {{--<label for=""></label>--}}
