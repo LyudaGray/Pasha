@@ -19,6 +19,7 @@
     <link rel="shortcut icon" type="image/png" href={{asset('img/zn.png')}}/>
 
     <meta name="description" content="">
+    <meta http-equiv="Cache-Control" content="no-cache" />
     <script src="{{asset('js/modernizr.js')}}"></script>
 
 

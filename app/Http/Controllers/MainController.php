@@ -11,5 +11,6 @@ class MainController extends Controller
 
     public function __construct(){
         $this->menu = Menu::all();
+        $this->middleware('auth');
     }
 }

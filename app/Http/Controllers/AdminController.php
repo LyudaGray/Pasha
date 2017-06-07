@@ -116,9 +116,6 @@ class AdminController extends MainController
 
         $products = Product::all();
 
-
-
-
         return view('admin.admin_show_products', ['products'=>$products]);
 
     }
