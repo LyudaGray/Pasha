@@ -2,8 +2,6 @@
  * Created by User on 15.05.2017.
  */
 
-
-
 function addToCart(itemId) {
     console.log("js - addToCart("+itemId+")");
     $.ajax({
@@ -15,10 +13,13 @@ function addToCart(itemId) {
         success: function (data) {
 
             if (data['success']){
-                // alert(data['product'+itemId]);
+                // alert(data['count_cart']);
                 $('#cart .count').html(data['count_cart']);
                 $('#addCart_'+itemId).parent().toggleClass('hide');
                 $('#removeCart_'+itemId).parent().toggleClass('hide');
+
+                // history.pushState({'count':data['count_cart']}, null);
+
             }else {
                 alert("Все плохо");
             }
@@ -41,7 +42,6 @@ function removeFromCart(itemId) {
                 $('#cart .count').html(data["count_cart"]);
                 $('#addCart_'+itemId).parent().toggleClass('hide');
                 $('#removeCart_'+itemId).parent().toggleClass('hide');
-                // $('#orderForm').addClass('hide');
                 $('#row_'+itemId).remove();
                 $('#submit_order').addClass('hide');
                 calculateSumm();
@@ -97,6 +97,7 @@ $(function() {
         });
     
     });
+
     if($('.slider1').length) {
 			$('.slider1').bxSlider({
 				mode: 'fade',
@@ -122,8 +123,19 @@ $(function() {
           captions: false,
           auto:true,
           pager:false,
-          controls:false,
+          controls:false
         });
     }
 
+    // $(window).on('popstate', function(event) {
+    //
+    //     console.log(event.state);
+    //
+    // });
+
+
 });
+
+    // window.addEventListener ("popstate", function (e) {
+    //     console.log(e.state.count);//код обработки события popstate
+    // });

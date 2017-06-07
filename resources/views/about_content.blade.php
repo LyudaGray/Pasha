@@ -18,7 +18,7 @@
     <aside>
         <!--- Start Animation -->
         <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-            <img src="../img/five.jpg" class="circle-image" title=""/>
+            <img src={{asset('img/five.jpg')}} class="circle-image" title=""/>
         </section> <!--- End Animation -->
     </aside>
 
@@ -28,7 +28,7 @@
         <div class="profile-image">
             <!--- Start Animation -->
             <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-                <img src="../img/3d-dje.png" title=""/>
+                <img src={{asset('img/3d-dje.png')}} title=""/>
             </section>
             <!--- End Animation -->
         </div>
@@ -55,7 +55,7 @@
         <div class="profile-image">
             <!--- Start Animation -->
             <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-                <img src="../img/3d-temp.png" title=""/>
+                <img src={{asset('img/3d-temp.png')}} title=""/>
         </div>
         <div class="profile-text">
             <!--- Start Animation -->
@@ -77,7 +77,7 @@
         <!--- Start Animation -->
         <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
             <h3 class="welcome-text"></h3>
-            <img src="../img/four.jpg" title=""/>
+            <img src={{asset('img/four.jpg')}} title=""/>
             <p>Для получения определенной формы и рисунка кузнецы используют матрицы, которые подкладываются под заготовки.</p>
         </section> <!--- End Animation -->
     </section>
@@ -85,7 +85,7 @@
         <!--- Start Animation -->
         <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
             <h3 class="welcome-text"></h3>
-            <img src="../img/two.jpg" title=""/>
+            <img src={{asset('img/two.jpg')}} title=""/>
             <p>Тонкая листовая медь мягкая, поэтому вытяжку можно делать просто вручную.</p>
         </section> <!--- End Animation -->
     </section>
@@ -93,7 +93,7 @@
         <!--- Start Animation -->
         <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
             <h3 class="welcome-text"></h3>
-            <img src="../img/three.jpg" title=""/>
+            <img src={{asset('img/three.jpg')}} title=""/>
             <p>Джезве выполняется из меди методом ротационной вытяжки. </p>
         </section> <!--- End Animation -->
     </section>
@@ -105,6 +105,6 @@
 
     <!--- Start Animation -->
     <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
-        <img src="../img/3d.png" title=""/>
+        <img src={{asset('img/3d.png')}} title=""/>
     </section> <!--- End Animation -->
 
