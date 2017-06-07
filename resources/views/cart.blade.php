@@ -44,7 +44,7 @@
 
                                 <td class="amount" data-label="Количество"><input onchange="calculateSumm();" id="ProductId_{{$item['id']}}" min="1" size="3" type="number" value="1" name="countOfProductId_{{$item['id']}}"></td>
 
-                                <td class="coast" data-label="Цена за единицу"><input id="priceOfProductId_{{$item['id']}}" type="text" value="{{$item['price']}}" name="priceOfProductId_{{$item['id']}}" readonly></td>
+                                <td class="coast" data-label="Цена за единицу"><input id="priceOfProductId_{{$item['id']}}" type="text" value="{{$item['price']}}" name="priceOfProductId_{{$item['id']}}"></td>
 
                                 <td class="del" data-label="Удалить из корзины"><button class="btn" type="button" onclick="removeFromCart({{$item['id']}})">Удалить</button> </td>
 
@@ -93,11 +93,11 @@
 
                     {{--капча--}}
                     <div class="formblock ">
-                        <label for="captchaInput">Captcha</label>
+                        <label for="captchaInput">Капча</label>
                         <div class="captcha">
                             <input id="captchaInput" type="text" name="captcha" required>
                             {{--<label for=""></label>--}}
-                            <img src="{{ captcha_src() }}" alt="captcha" class="captcha-img" data-refresh-config="default"><a href="#" id="refresh"><span class="captcha-loader">Обновить</span></a></p>
+                            <img src="{{ captcha_src() }}" alt="captcha" class="captcha-img" data-refresh-config="default"><a href="#" id="refresh"><span class="captcha-loader"></span></a></p>
                         </div>
                     </div>
                 {{csrf_field()}}

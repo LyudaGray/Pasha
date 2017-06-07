@@ -51,8 +51,10 @@ table input[type="text"] {
 .captcha-loader {
     display: inline-block;
     vertical-align: middle;
-    font-family: 'Ubuntu Condensed', sans-serif;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQ9JREFUeNqsVNENwiAQbY3/MkJH6AZ2AxmBERxBJ2icoCPgBtUJ2g3aDeoG+C5eIyIUTXnJCwEuj7vj7rLsBxhjCrAieu5K80JJ++2CiMJyAKVzTssIXsELKPhKeAXZiwYswB48gzfLhM73ID14ZOGwV+z+4AvPCVOCrXlDuUaSLzQoIjn1QdkGApzALiZmfVK5ZHCyf2o12DudQKey60glEGw3Vh2NCYK9b7LEIMGHVbBrsZtj10uF/EcOh2Sh8vAweSIx+tguVOAtd8wMHRPjlJmvtDnN3nB/F5EW7IJ1zCKGO2fivW+oSsdWxnqaXq7ZOISB7T+GSe4I0sCsc8AZuIVVp9RRPUx6n1NPAQYASOZuWM18aIEAAAAASUVORK5CYII=');
     margin-left: 10px;
-    font-weight: normal;
-    font-size: 14px;
 }
