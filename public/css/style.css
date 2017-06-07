@@ -718,7 +718,7 @@ tfoot td {
 
 .button-holder {
 	float: right;
-	width: 19%;
+	width: 30%;
 	padding: 1%;
 	margin-bottom: 4%;
 }
@@ -1114,6 +1114,7 @@ ul.social {
 	.button-holder {
 		margin: 0 auto;
 		width: 95%;
+		float: none;
 	}
 
 	.btn {
