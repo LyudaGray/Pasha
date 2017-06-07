@@ -91,7 +91,7 @@
 
 
 
-                    {{--капча--}}
+                    {{--captcha--}}
                     <div class="formblock ">
                         <label for="captchaInput">Капча</label>
                         <div class="captcha">
