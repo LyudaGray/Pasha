@@ -44,6 +44,7 @@ function removeFromCart(itemId) {
                 $('#removeCart_'+itemId).parent().toggleClass('hide');
                 $('#row_'+itemId).remove();
                 $('#submit_order').addClass('hide');
+                $('#press_order').removeClass('hide');
                 calculateSumm();
             }
         }
