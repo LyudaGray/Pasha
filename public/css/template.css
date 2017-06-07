@@ -11,7 +11,7 @@
 #cart .count {
     position: absolute;
     top: -5px;
-    right: 0;
+    right: -5px;
     font-size: 12px;
     color: red;
 }
@@ -50,7 +50,7 @@ table input[type="text"] {
 }
 .captcha-loader {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: baseline;
     width: 20px;
     height: 20px;
     background-repeat: no-repeat;
