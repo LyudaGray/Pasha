@@ -1,6 +1,14 @@
 /**
  * Created by User on 15.05.2017.
  */
+function addCartCountToWindowSession() {
+	if (typeof(Storage) !== "undefined") {
+		var cartItems = $('#cart .count').text();
+		window.sessionStorage.setItem('cartCount', cartItems);
+	} else {
+		console.log("Sorry! No Web Storage support..");
+	}
+}
 
 function addToCart(itemId) {
     console.log("js - addToCart("+itemId+")");
@@ -17,10 +25,8 @@ function addToCart(itemId) {
                 $('#cart .count').html(data['count_cart']);
                 $('#addCart_'+itemId).parent().toggleClass('hide');
                 $('#removeCart_'+itemId).parent().toggleClass('hide');
-
-                // history.pushState({'count':data['count_cart']}, null);
-
-            }else {
+							  addCartCountToWindowSession();
+						}else {
                 alert("Все плохо");
             }
         }
@@ -37,15 +43,20 @@ function removeFromCart(itemId) {
 
         success: function (data) {
 
-            if (data['success']){
+            if (data['success']) {
 
                 $('#cart .count').html(data["count_cart"]);
                 $('#addCart_'+itemId).parent().toggleClass('hide');
                 $('#removeCart_'+itemId).parent().toggleClass('hide');
                 $('#row_'+itemId).remove();
-                $('#submit_order').addClass('hide');
-                $('#press_order').removeClass('hide');
                 calculateSumm();
+							  addCartCountToWindowSession();
+							  if(!data["count_cart"]) {
+									$('#press_order').addClass('disabled');
+									if($('#submit_order').is(':visible')) {
+										$('#submit_order').addClass('hide');
+									}
+								}
             }
         }
     });
@@ -54,7 +65,7 @@ function removeFromCart(itemId) {
 function showOrderForm() {
     calculateSumm();
     $('#submit_order').removeClass('hide');
-    $('#press_order').addClass('hide');
+    $('#press_order').addClass('disabled');
 
 }
 
@@ -127,16 +138,14 @@ $(function() {
           controls:false
         });
     }
-
-    // $(window).on('popstate', function(event) {
-    //
-    //     console.log(event.state);
-    //
-    // });
-
-
+	
+	$(window).on('load', function() {
+		if (sessionStorage.getItem('cartCount')) {
+			var cartItems = window.sessionStorage.getItem('cartCount');
+			$('#cart .count').text(cartItems);
+			if(cartItems === "0") {
+				$('#cart .count').text("");
+			}
+		}
+	});
 });
-
-    // window.addEventListener ("popstate", function (e) {
-    //     console.log(e.state.count);//код обработки события popstate
-    // });

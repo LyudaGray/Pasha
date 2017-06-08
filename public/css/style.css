@@ -726,6 +726,7 @@ tfoot td {
 .btn {
 	float: left;
 	text-align: center;
+	user-select: none;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
@@ -742,7 +743,11 @@ tfoot td {
 	background: #42507D;
 	text-decoration: none;
 }
-
+.disabled {
+	cursor: default;
+	pointer-events: none;
+	opacity: .56;
+}
 /*--- END PAGE CALLOUT WITH BUTTON --*/
 /*--- Start Contact Form Style --*/
 .screen-reader-text h5 {
