@@ -109,6 +109,9 @@ $(function() {
         });
     
     });
+    $("#submit_order").on("submit", function () {
+        addCartCountToWindowSession();
+    });
 
     if($('.slider1').length) {
 			$('.slider1').bxSlider({
