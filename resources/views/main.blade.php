@@ -4,12 +4,9 @@
 
 @section('slider')
     @include('slider')
-
 @endsection
 
 @section('categories')
-
-
     @include('categories')
 @endsection
 

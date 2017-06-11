@@ -103,7 +103,7 @@ class AdminController extends MainController
 
     public function show_orders($status){
 
-        $orders = Order::where('status', $status)->get();
+        $orders = Order::where('status', $status)->orderBy('created_at', 'desc')->get();
         $purchases = Purchase::all();
         $products = Product::all();
 

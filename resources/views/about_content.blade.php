@@ -56,6 +56,7 @@
             <!--- Start Animation -->
             <section class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
                 <img src={{asset('img/3d-temp.png')}} title=""/>
+            </section>
         </div>
         <div class="profile-text">
             <!--- Start Animation -->
@@ -108,3 +109,4 @@
         <img src={{asset('img/3d.png')}} title=""/>
     </section> <!--- End Animation -->
 
+</div>
